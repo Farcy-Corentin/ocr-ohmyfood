@@ -1,0 +1,45 @@
+//// Mixin for linear-gradient
+
+///@group gradient
+///@param {string|number} $direction - direction of gradient
+///@param {color} $colors - colors of gradient
+@mixin linear-gradient($direction, $colors) {
+  background: linear-gradient($direction, $colors);
+}
+
+;
+
+///@group typography
+///@param {string} $family [$font-families-text] - font family
+///@param {string} $color [map-get($colors, neutral, normal)] - colors of font
+///@param {string} $size [map-get($sizes, medium, 300)] - size of font in rem
+@mixin typography(
+  $family: $font-family-text,
+  $color: map-get($colors, neutral, normal),
+  $size: map-get($sizes, medium, 300)
+) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+};
+
+///@group spacing
+///@param {type} $type - margin|padding
+///@param {string} $top - value of margin top
+///@param {string} $right - value of margin right
+///@param {string} $bottom - value of margin bottom
+///@param {string} $left - value of margin left
+@mixin spacing($type,$top: 0,$right: 0,$bottom: 0,$left: 0) {
+  $s: $top $right $bottom $left;
+  @each $key, $size in $s {
+    @if $key != 0 and unit($key) != "px" {
+      @error "L'unité doit être en pixel(px)."
+    }
+  }
+  @if $type == "padding" {
+    padding: $s;
+  }
+  @if $type == "margin" {
+    margin: $s;
+  }
+}

@@ -1,0 +1,42 @@
+///@group colors
+/// Default colors.
+///@type Map
+/// colors
+///@prop {Map} primary - description
+///@prop {Color} primary.light [#AD80E5] - description
+///@prop {Color} primary.normal [#9356DC] - description
+///@prop {Color} primary.dark [#772BD4] - description
+///@prop {Map} secondary - description
+///@prop {Color} secondary.light [#FFADE8] - description
+///@prop {Color} secondary.normal [#FF79DA] - description
+///@prop {Color} secondary.dark [#FF47CB] - description
+///@prop {Map} tertiary - description
+///@prop {Color} tertiary.light [#BFEDE2] - description
+///@prop {Color} tertiary.normal [#99E2D0] - description
+///@prop {Color} tertiary.dark [#70D7BD] - description
+///@prop {Map} neutral - description
+///@prop {Color} tertiary.light [#F9FAFB] - description
+///@prop {Color} tertiary.normal [#9CA3AF] - description
+///@prop {Color} tertiary.dark [#111827] - description
+$colors: (
+        primary: (
+                light: lighten(#9356DC, 10),
+                normal: #9356DC,
+                dark: darken(#9356DC, 10),
+        ),
+        secondary: (
+                light: lighten(#FF79DA, 10),
+                normal: #FF79DA,
+                dark: darken(#FF79DA, 10),
+        ),
+        terciary: (
+                light: lighten(#99E2D0, 10),
+                normal: #99E2D0,
+                dark: darken(#99E2D0, 10),
+        ),
+        neutral: (
+                light: #f9fafb,
+                normal: #9ca3af,
+                dark: #111827,
+        ),
+);

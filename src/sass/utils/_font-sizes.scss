@@ -1,0 +1,69 @@
+///@group typography
+/// Default sizes
+///@type Map
+///sizes
+///@prop {Map} small
+///@prop {rem} 100 [.625rem]
+///@prop {rem} 200 [.725rem]
+///@prop {rem} 300 [.875rem]
+///@prop {rem} 400 [1.125rem]
+///@prop {rem} 500 [1.25rem]
+///@prop {rem} 600 [1.75rem]
+///@prop {rem} 700 [2.25rem]
+///@prop {rem} 800 [2.75rem]
+///@prop {rem} 900 [3.25rem]
+///@prop {Map} medium
+///@prop {rem} 100 [.725rem]
+///@prop {rem} 200 [.875rem]
+///@prop {rem} 300 [1rem]
+///@prop {rem} 400 [1.125rem]
+///@prop {rem} 500 [1.325rem]
+///@prop {rem} 600 [2rem]
+///@prop {rem} 700 [2.75rem]
+///@prop {rem} 800 [3.25rem]
+///@prop {rem} 900 [4rem]
+///@prop {Map} large
+///@prop {rem} 100 [.725rem]
+///@prop {rem} 200 [.875rem]
+///@prop {rem} 300 [1rem]
+///@prop {rem} 400 [1.125rem]
+///@prop {rem} 500 [1.325rem]
+///@prop {rem} 600 [2rem]
+///@prop {rem} 700 [2.75rem]
+///@prop {rem} 800 [3.5rem]
+///@prop {rem} 900 [5rem]
+$sizes: (
+        small: (
+                100: .625rem,
+                200: .725rem,
+                300: .875rem,
+                400: 1.125rem,
+                500: 1.25rem,
+                600: 1.75rem,
+                700: 2.25rem,
+                800: 2.75rem,
+                900: 3.25rem,
+        ),
+        medium: (
+                100: .725rem,
+                200: .875rem,
+                300: 1rem,
+                400: 1.125rem,
+                500: 1.325rem,
+                600: 2rem,
+                700: 2.75rem,
+                800: 3.25rem,
+                900: 4rem,
+        ),
+        large: (
+                100: .725rem,
+                200: .875rem,
+                300: 1rem,
+                400: 1.125rem,
+                500: 1.325rem,
+                600: 2rem,
+                700: 2.75rem,
+                800: 3.5rem,
+                900: 5rem,
+        ),
+);
