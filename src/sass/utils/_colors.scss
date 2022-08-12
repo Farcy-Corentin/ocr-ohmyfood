@@ -16,6 +16,7 @@
 ///@prop {Color} tertiary.dark [#70D7BD] - description
 ///@prop {Map} neutral - description
 ///@prop {Color} tertiary.light [#F9FAFB] - description
+///@prop {Color} tertiary.gray [#E4E4E7] - description
 ///@prop {Color} tertiary.normal [#9CA3AF] - description
 ///@prop {Color} tertiary.dark [#111827] - description
 $colors: (
@@ -36,6 +37,7 @@ $colors: (
         ),
         neutral: (
                 light: #f9fafb,
+                gray: #e4e4e7,
                 normal: #9ca3af,
                 dark: #111827,
         ),

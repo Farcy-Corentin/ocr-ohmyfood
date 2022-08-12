@@ -1,0 +1,27 @@
+header{
+  @include spacing(map-get($spacing, type, padding), 16px, 0, 4px, 0);
+  box-shadow: 0 0 7px rgb(18, 18, 18, 0.5);
+  .row {
+    .col-2 {
+      @include mediaquery(map-get($breakpoints,sm), min-width) {
+        display: none;
+      }
+    }
+  }
+}
+
+nav {
+ @include flex-center;
+  height: 100%;
+}
+
+.header__logo {
+  height: 100%;
+  @include mediaquery(map-get($breakpoints,sm), min-width) {
+    @include flex-center;
+  }
+}
+
+.logo {
+  height: 41px;
+}

@@ -1,0 +1,28 @@
+@import "./spacing";
+
+$MAX_COLUM: 12;
+
+@for $i from 1 through $MAX_COLUM {
+  .col--#{$i} {
+    width: calc((100 / ($MAX_COLUM / $i) ) * 1%);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+  &>* {
+    padding: 0 12px;
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @include mediaquery(map-get($breakpoints,$key), min-width){
+    @for $i from 1 through $MAX_COLUM {
+      .col-#{$key}--#{$i} {
+        width: calc((100 / ($MAX_COLUM / $i) ) * 1%);
+      }
+    }
+  }
+}

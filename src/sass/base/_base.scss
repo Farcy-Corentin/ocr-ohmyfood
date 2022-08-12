@@ -3,3 +3,7 @@ body {
   width: 100vw;
   background: map-get($colors, neutral, light);
 }
+
+.d-none {
+  display: none;
+}

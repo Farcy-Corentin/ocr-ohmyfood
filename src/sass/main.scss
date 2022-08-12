@@ -1,14 +1,19 @@
 @import "./utils/colors";
 @import "./utils/font-families";
 @import "./utils/font-sizes";
+@import "./utils/breakpoints";
+@import "./utils/spacing";
 @import "./utils/functions";
 @import "./utils/mixins";
+@import "./utils/grid";
+@import "./utils/container-max-width";
+@import "./utils/container";
 
 @import "./base/base";
 @import "./base/reset";
 @import "./base/typography";
 
-//@import "./src/sass/components";
+@import "./components/searchbar";
 
 @import "./layout/header";
 @import "./layout/footer";

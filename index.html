@@ -10,21 +10,37 @@
     <link rel="stylesheet" href="./public/assets/css/styles.css">
 </head>
 <body>
-<header>
-    <nav>
-        <div>
-            <a href="index.html">
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
+<div class="container--fluid">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col--2">
+                    <nav class="nav">
+                        <a href="./index.html">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </nav>
+                </div>
+                <div class="col--10 col-sm--12 header__logo">
+                    <a href="./index.html">
+                        <img src="/public/assets/images/logo/ohmyfood@2x.svg" class="logo" alt="ohmyfood logo">
+                    </a>
+                </div>
+            </div>
         </div>
-        <a href="/index.html">
-            <img src="/public/assets/images/logo/ohmyfood@2x.svg" alt="ohmyfood logo">
-        </a>
-    </nav>
-</header>
-<main>
-    <h1>Test</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur in omnis sit! Ea, pariatur, rem? Aliquam amet deleniti, dicta distinctio maiores numquam odio porro possimus soluta ullam veritatis, voluptates.</p>
-</main>
+    </header>
+    <main>
+        <div class="searchbar">
+            <div class="container">
+                <form action="" class="searchbar__form col--8">
+                    <label for="location">
+                        <i class="fa-solid fa-location-dot searchbar__icon"></i>
+                        <input name="location" id="location" class="searchbar__field">
+                    </label>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
 </body>
 </html>

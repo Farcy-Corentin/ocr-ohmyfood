@@ -1,13 +1,9 @@
-//// Mixin for linear-gradient
-
 ///@group gradient
 ///@param {string|number} $direction - direction of gradient
 ///@param {color} $colors - colors of gradient
 @mixin linear-gradient($direction, $colors) {
   background: linear-gradient($direction, $colors);
-}
-
-;
+};
 
 ///@group typography
 ///@param {string} $family [$font-families-text] - font family
@@ -42,4 +38,23 @@
   @if $type == "margin" {
     margin: $s;
   }
+};
+
+@mixin gap($sizes) {
+  gap: $sizes;
+}
+
+
+@mixin mediaquery($value,$type: max-widht) {
+  $size: $value;
+
+  @media only screen and ($type: $size) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

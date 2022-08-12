@@ -1,0 +1,16 @@
+$spacing: (
+        type: (
+                padding: padding,
+                margin: margin,
+                gap: gap,
+        ),
+        values: (
+                0: 0,
+                xs: 4px,
+                sm: 8px,
+                md: 16px,
+                lg: 32px,
+                xl: 64px,
+                xxl: 128px
+        )
+)

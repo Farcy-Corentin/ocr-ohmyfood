@@ -1,0 +1,6 @@
+.searchbar {
+  background: map-get($colors, neutral, gray);
+  &__form {
+    margin: 0 auto;
+  }
+}
