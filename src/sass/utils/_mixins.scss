@@ -11,7 +11,7 @@
 ///@param {string} $size [map-get($sizes, medium, 300)] - size of font in rem
 @mixin typography(
   $family: $font-family-text,
-  $color: map-get($colors, neutral, normal),
+  $color: map-get($colors, neutral, dark),
   $size: map-get($sizes, medium, 300)
 ) {
   font-family: $family;
@@ -40,10 +40,9 @@
   }
 };
 
-@mixin gap($sizes) {
-  gap: $sizes;
+@mixin spacing-margin-auto {
+  margin: 0 auto;
 }
-
 
 @mixin mediaquery($value,$type: max-widht) {
   $size: $value;
@@ -57,4 +56,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin border-radius-round {
+  border-radius: 50px;
+}
+
+@mixin border-radius-pill {
+  border-radius: 25px;
+}
+
+@mixin border-radius-large {
+  border-radius: 20px;
+}
+
+@mixin border-radius-medium {
+  border-radius: 10px;
+}
+
+@mixin border-radius-small {
+  border-radius: 8px;
+}
+
+@mixin hexa-to-rgb($property,$colors, $opacity: 1) {
+  #{$property}: rgba($colors, $opacity)
+}
+
+@mixin hexa-to-rgb($property, $colors) {
+  #{$property}: rgb($colors)
+}
+
+@mixin shadow-sm {
+  box-shadow: 0 0 5px rgba(1, 1, 1, 0.35);
+}
+
+@mixin shadow-md {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),0 1px 10px 0 rgba(0,0,0,0.12),0 2px 4px -1px rgba(0,0,0,0.3);
 }

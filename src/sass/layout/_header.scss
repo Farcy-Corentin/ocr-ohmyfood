@@ -1,27 +1,14 @@
-header{
+header {
   @include spacing(map-get($spacing, type, padding), 16px, 0, 4px, 0);
-  box-shadow: 0 0 7px rgb(18, 18, 18, 0.5);
+  @include spacing(map-get($spacing, type, margin), 0, 0, 3px, 0);
+  background: map-get($colors, neutral, white);
+  @include shadow-sm;
+
   .row {
-    .col-2 {
+    .col--3 {
       @include mediaquery(map-get($breakpoints,sm), min-width) {
         display: none;
       }
     }
   }
-}
-
-nav {
- @include flex-center;
-  height: 100%;
-}
-
-.header__logo {
-  height: 100%;
-  @include mediaquery(map-get($breakpoints,sm), min-width) {
-    @include flex-center;
-  }
-}
-
-.logo {
-  height: 41px;
 }

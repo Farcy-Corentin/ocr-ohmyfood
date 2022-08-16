@@ -1,0 +1,40 @@
+.btn {
+  position: relative;
+  z-index: 1;
+  @include spacing(
+                  map-get($spacing, type, padding),
+                  map-get($spacing,values, md),
+                  map-get($spacing,values, lg),
+                  map-get($spacing,values, md),
+                  map-get($spacing,values, lg)
+  );
+  border: 0;
+  @include border-radius-small;
+  color: map-get($colors, neutral, white);
+  @include linear-gradient(345deg, (rgba(map-get($colors, primary, normal), 1), rgba(map-get($colors, secondary, normal), 0.8)));
+  &:hover {
+    cursor: pointer;
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include linear-gradient(345deg, (rgba(map-get($colors, primary, light), 0.7), rgba(map-get($colors, secondary, light), 0.8)));
+    @include border-radius-small;
+    z-index: -1;
+    transition: opacity 300ms 100ms;
+  }
+  &--cta {
+    @include border-radius-round;
+    &::after {
+      @include border-radius-round;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.hero {
+  @include flex-center;
+  flex-direction: column;
+  @include spacing(
+                  map-get($spacing, type, padding),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, md),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, md)
+  );
+  text-align: center;
+  background: map-get($colors, neutral, lighten(gray, 10));
+  &__title {
+    @include spacing(
+                    map-get($spacing, type, padding),
+                    map-get($spacing, values, 0),
+                    map-get($spacing, values, lg),
+                    map-get($spacing, values, 0),
+                    map-get($spacing, values, lg)
+    );
+  }
+  &__description {
+    @include spacing(map-get($spacing, type, margin), 0, 0, 32px, 0)
+  }
+}
+
+.functioning {
+  background: map-get($colors, neutral, white);
+  @include spacing(
+                  map-get($spacing, type, padding),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, 0),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, 0)
+  );
+}

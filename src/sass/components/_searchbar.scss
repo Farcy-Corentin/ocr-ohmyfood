@@ -1,6 +1,25 @@
 .searchbar {
   background: map-get($colors, neutral, gray);
-  &__form {
-    margin: 0 auto;
+}
+
+.form {
+  @include spacing(padding, 16px, 16px, 16px, 16px);
+  @include spacing-margin-auto;
+  &__label {
+    display: flex;
+    @include spacing-margin-auto;
+    width: 50%;
+  }
+  &__icon {
+    font-size: 14px;
+    color: map-get($colors, neutral, dark);
+    @include spacing(margin, 0, 12px, 0, 0);
+  }
+  &__textfield {
+    width: 100%;
+    background: none;
+    border: 0;
+    font-weight: bold;
+    color: map-get($colors, neutral, dark);
   }
 }

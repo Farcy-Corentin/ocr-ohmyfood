@@ -1,31 +1,41 @@
-@each $key, $value in $breakpoints {
-  .container {
-    padding: 0 1.5rem;
+.container {
+  padding: 0 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+
+  &--fluid {
     width: 100%;
-    margin: 0 auto;
-    &--fluid {
-      width: 100%;
-      margin: 0;
-    }
-    &--#{$key} {
-      max-width: 100%;
-      margin: 0 auto;
-    }
+    margin: 0;
   }
-  @include mediaquery(map-get($breakpoints,$key), min-width) {
-    @each $max-widths, $max-width in $container-max-widths {
-      @if $key == $max-widths {
-        .container {
-          max-width: $max-width;
-          margin: 0 auto;
-          &--fluid {
-            width: 100%;
-            margin: 0;
-          }
-          &--#{$key} {
+
+  @each $key, $value in $breakpoints {
+    @include mediaquery(map-get($breakpoints, $key), min-width) {
+      @each $max-widths, $max-width in $container-max-widths {
+        @if $key == $max-widths {
+          .container {
             max-width: $max-width;
             margin: 0 auto;
+
+            &--fluid {
+              width: 100%;
+              margin: 0;
+            }
           }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $breakpoints {
+  .container--#{$key} {
+    max-width: 100%;
+    margin: 0 auto;
+    @include mediaquery(map-get($breakpoints, $key), min-width) {
+      @each $max-widths, $max-width in $container-max-widths {
+        @if $key == $max-widths {
+          max-width: $max-width;
+          margin: 0 auto;
         }
       }
     }

@@ -1,0 +1,28 @@
+.chip {
+  @include spacing(
+                  map-get($spacing, type, padding),
+                  map-get($spacing, values, md) * 1.5,
+                  map-get($spacing, values, md),
+                  map-get($spacing, values, md) * 1.5,
+                  map-get($spacing, values, md)
+  );
+  @include spacing(
+                  map-get($spacing, type, margin),
+                  map-get($spacing, values, 0),
+                  map-get($spacing, values, 0),
+                  map-get($spacing, values, lg),
+                  map-get($spacing, values, 0)
+  );
+  background: map-get($colors, neutral, light);
+  @include border-radius-large;
+  @include shadow-md;
+  &__number {
+    @include flex-center;
+    height: 25px;
+    width: 25px;
+    margin-left: -27px;
+    color: map-get($colors, neutral, white);
+    @include border-radius-round;
+    background: map-get($colors, primary, normal);
+  }
+}

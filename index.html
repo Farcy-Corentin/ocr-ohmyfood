@@ -14,14 +14,14 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col--2">
+                <div class="col--3">
                     <nav class="nav">
                         <a href="./index.html">
                             <i class="fa-solid fa-arrow-left"></i>
                         </a>
                     </nav>
                 </div>
-                <div class="col--10 col-sm--12 header__logo">
+                <div class="col--6 col-sm--12 header__logo">
                     <a href="./index.html">
                         <img src="/public/assets/images/logo/ohmyfood@2x.svg" class="logo" alt="ohmyfood logo">
                     </a>
@@ -32,14 +32,55 @@
     <main>
         <div class="searchbar">
             <div class="container">
-                <form action="" class="searchbar__form col--8">
-                    <label for="location">
-                        <i class="fa-solid fa-location-dot searchbar__icon"></i>
-                        <input name="location" id="location" class="searchbar__field">
+                <form action="" class="form col--12 col-md--8">
+                    <label for="location" class="form__label">
+                        <i class="fa-solid fa-location-dot form__icon"></i>
+                        <input name="location" id="location" class="form__textfield" value="Paris, Belleville">
                     </label>
                 </form>
             </div>
         </div>
+        <div class="hero">
+            <h2 class="hero__title">Réservez le menu qui vous convient</h2>
+            <p class="hero__description">Découvrez des restaurants d'exeption, sélectionnés par nos soins.</p>
+            <button type="button" class="btn btn--cta">Explorer nos restaurants</button>
+        </div>
+        <section class="functioning">
+            <div class="container container--xl">
+                <h1>Fonctionnement</h1>
+                <div class="functioning__chips-list">
+                    <div class="row">
+                        <div class="chips-list__chip col--12 col-sm--4">
+                            <div class="chip row">
+                                <div class="chip__number">1</div>
+                                <div class="chip__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                                <div class="chip__title">
+                                    Choisissez un restaurant
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chips-list__chip col--12 col-sm--4">
+                            <div class="chip row">
+                                <div class="chip__number">2</div>
+                                <div class="chip__icon"><i class="fa-solid fa-list-ul"></i></div>
+                                <div class="chip__title">
+                                    Composez votre menu
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chips-list__chip col--12 col-sm--4">
+                            <div class="chip row">
+                                <div class="chip__number">3</div>
+                                <div class="chip__icon"><i class="fa-solid fa-store"></i></div>
+                                <div class="chip__title">
+                                    Dégustez au restaurant
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </div>
 </body>

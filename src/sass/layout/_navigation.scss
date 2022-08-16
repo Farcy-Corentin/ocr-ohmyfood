@@ -1,0 +1,15 @@
+nav {
+  @include flex-start;
+  height: 100%;
+}
+
+.header__logo {
+  height: 100%;
+  @include mediaquery(map-get($breakpoints,sm), min-width) {
+    @include flex-center;
+  }
+}
+
+.logo {
+  height: 25px;
+}
