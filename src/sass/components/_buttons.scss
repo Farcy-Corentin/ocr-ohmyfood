@@ -3,38 +3,103 @@
   z-index: 1;
   @include spacing(
                   map-get($spacing, type, padding),
-                  map-get($spacing,values, md),
-                  map-get($spacing,values, lg),
-                  map-get($spacing,values, md),
-                  map-get($spacing,values, lg)
+                  map-get($spacing, values, md),
+                  map-get($spacing, values, lg),
+                  map-get($spacing, values, md),
+                  map-get($spacing, values, lg)
   );
   border: 0;
   @include border-radius-small;
   color: map-get($colors, neutral, white);
   @include linear-gradient(345deg, (rgba(map-get($colors, primary, normal), 1), rgba(map-get($colors, secondary, normal), 0.8)));
+  @include shadow-md;
+
   &:hover {
     cursor: pointer;
     &::after {
       opacity: 1;
     }
   }
+
   &::after {
-    content: '';
+    @include pseudo-element;
     opacity: 0;
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    @include shadow-lg;
     @include linear-gradient(345deg, (rgba(map-get($colors, primary, light), 0.7), rgba(map-get($colors, secondary, light), 0.8)));
     @include border-radius-small;
     z-index: -1;
-    transition: opacity 300ms 100ms;
+    transition: opacity 300ms 100ms ease-in-out;
   }
+
   &--cta {
     @include border-radius-round;
+
     &::after {
       @include border-radius-round;
     }
+  }
+
+  &--new {
+    position: absolute;
+    background: map-get($colors, terciary, normal);
+    color: darken(map-get($colors, terciary, normal), 50%);
+    @include spacing(
+                    map-get($spacing, type, padding),
+                    map-get($spacing, values,sm),
+                    map-get($spacing, values, md),
+                    map-get($spacing, values, sm),
+                    map-get($spacing, values, md)
+    );
+    border-radius: 3px;
+  }
+
+  &--heart {
+    font-size: 24px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    & > .fas {
+      position: absolute;
+      left: 0;
+      @include linear-gradient(345deg,(rgba(map-get($colors, secondary, normal), 0.8), (rgba(map-get($colors, primary, dark), 0.7))));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(0);
+      transform-origin: bottom;
+    }
+    &:active > .far {
+      animation: change-opacity 300ms 10ms forwards;
+    }
+    &:active > .fas {
+      animation: icon-fulfill 300ms 25ms forwards;
+    }
+  }
+}
+
+@keyframes change-opacity {
+  from, 20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes icon-fulfill {
+  from {
+    transform: scale(0);
+    animation-timing-function: ease-in-out;
+  }
+  70% {
+    transform: scale(1.1);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -34,3 +34,23 @@
                   map-get($spacing, values, 0)
   );
 }
+
+.restaurant {
+  @include spacing(
+                  map-get($spacing, type, padding),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, 0),
+                  map-get($spacing, values, xl),
+                  map-get($spacing, values, 0)
+  );
+
+  & h2 {
+    margin-bottom: 32px;
+  }
+}
+
+.card-list {
+  .row {
+    gap: 24px 0;
+  }
+}

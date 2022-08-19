@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  background: map-get($colors, neutral, white);
+  @include border-radius-large;
+  &__heading {
+    position: relative;
+    &__button {
+      top: 5%;
+      right: 5%;
+    }
+    &__img {
+      object-fit: cover;
+      height: 250px;
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  &__content {
+    @include spacing(
+                    map-get($spacing, type, padding),
+                    16px,
+                    16px,
+                    16px,
+                    16px
+    );
+    &__title {
+      @include typography($font-family-title,map-get($colors, neutral, dark), map-get($sizes, medium, 400));
+      margin-bottom: 8px;
+      @include mediaquery(map-get($breakpoints, md), min-width) {
+        @include typography($font-family-title,map-get($colors, neutral, dark), map-get($sizes, medium, 500));
+      }
+    }
+  }
+}

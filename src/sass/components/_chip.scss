@@ -13,9 +13,41 @@
                   map-get($spacing, values, lg),
                   map-get($spacing, values, 0)
   );
-  background: map-get($colors, neutral, light);
+  background-color: map-get($colors, neutral, light);
   @include border-radius-large;
   @include shadow-md;
+  position: relative;
+  z-index: 1;
+  transition: all 100ms 50ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:hover .chip__icon {
+    color: map-get($colors, primary, normal);
+    transition: color 125ms 100ms ease-in-out;
+  }
+
+  &::after {
+    @include pseudo-element;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    @include shadow-lg;
+    background-color: darken(map-get($colors, neutral, light), 2);
+    transition: opacity 150ms 100ms ease-in-out;
+    @include border-radius-large;
+    z-index: -1;
+  }
+
   &__number {
     @include flex-center;
     height: 25px;
