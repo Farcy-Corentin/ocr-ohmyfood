@@ -1,6 +1,7 @@
 .btn {
   position: relative;
   z-index: 1;
+  cursor: pointer;
   @include spacing(
                   map-get($spacing, type, padding),
                   map-get($spacing, values, md),
@@ -14,8 +15,7 @@
   @include linear-gradient(345deg, (rgba(map-get($colors, primary, normal), 1), rgba(map-get($colors, secondary, normal), 0.8)));
   @include shadow-md;
 
-  &:hover {
-    cursor: pointer;
+  &:hover:not(.btn--new) {
     &::after {
       opacity: 1;
     }

@@ -42,7 +42,7 @@
     right: 0;
     opacity: 0;
     @include shadow-lg;
-    background-color: darken(map-get($colors, neutral, light), 2);
+    @include hexa-to-rgba(background, map-get($colors, secondary, normal), 0.1);
     transition: opacity 150ms 100ms ease-in-out;
     @include border-radius-large;
     z-index: -1;

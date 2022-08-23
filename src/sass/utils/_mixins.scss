@@ -90,7 +90,7 @@
   border-radius: 8px;
 }
 
-@mixin hexa-to-rgb($property,$colors, $opacity: 1) {
+@mixin hexa-to-rgba($property,$colors, $opacity: 1) {
   #{$property}: rgba($colors, $opacity)
 }
 

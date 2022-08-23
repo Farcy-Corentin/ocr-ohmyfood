@@ -5,7 +5,5 @@ nav {
 
 .header__logo {
   height: 100%;
-  @include mediaquery(map-get($breakpoints,sm), min-width) {
-    @include flex-center;
-  }
+  @include flex-center;
 }
