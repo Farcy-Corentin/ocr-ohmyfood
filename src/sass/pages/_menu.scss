@@ -24,8 +24,26 @@
   .container {
     padding: 1rem;
   }
-  .desserts {
-    margin-bottom: 32px;
+  h2 {
+    @include typography($font-family-text,map-get($colors, neutral, dark), map-get($sizes, medium, 400));
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    border-bottom: transparent;
+    margin-bottom: 24px;
+    &::before {
+      @include pseudo-element;
+      transform: scaleY(1.4);
+      width: 40px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 3px solid map-get($colors, terciary, normal);
+    }
+  }
+  .main-dish, .dish, .desserts {
+
   }
   .btn {
     @include spacing-margin-auto;
@@ -36,19 +54,5 @@
     align-items: start;
     margin-top: 2px;
   }
-  .card {
-    margin-bottom: 24px;
-    @include shadow-md;
-    &__content {
-      p, span {
-        @include typography($font-family-text, map-get($colors, neutral, dark), map-get($sizes, small, 300))
-      }
-      span {
-        font-weight: bold;
-      }
-      p {
-        margin: 0;
-      }
-    }
-  }
 }
+

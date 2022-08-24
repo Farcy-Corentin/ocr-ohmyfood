@@ -73,10 +73,10 @@
       transform-origin: bottom;
     }
     &:active > .far {
-      animation: change-opacity 300ms 10ms forwards;
+      animation: change-opacity 300ms 10ms forwards ease-in-out;
     }
     &:active > .fas {
-      animation: icon-fulfill 300ms 25ms forwards;
+      animation: icon-fulfill 300ms 25ms forwards ease-in-out;
     }
   }
 }

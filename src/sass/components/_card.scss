@@ -1,6 +1,8 @@
 .card {
   position: relative;
   background: map-get($colors, neutral, white);
+  margin-bottom: 24px;
+  @include shadow-md;
   @include border-radius-large;
   &__heading {
     position: relative;
@@ -31,8 +33,84 @@
         @include typography($font-family-title,map-get($colors, neutral, dark), map-get($sizes, medium, 500));
       }
     }
+    &__description {
+      @include typography;
+    }
   }
-  &__description {
-    @include typography;
+
+  &--menu {
+    display: flex;
+    overflow: hidden;
+    &:active .card--menu__is-checked {
+      animation: checked 300ms 100ms ease-in-out both;
+    }
+    &:active .card--menu__is-checked i {
+      animation: rotate 500ms ease-in-out;
+    }
+    &__content {
+      flex-basis: 0;
+      min-width: 0;
+      @include spacing(map-get($spacing, type, padding), 16px, 16px, 16px, 16px);
+      flex-grow: 1;
+      p, span {
+        @include typography($font-family-text, map-get($colors, neutral, dark), map-get($sizes, small, 300))
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &__price {
+      display: flex;
+      align-items: flex-end;
+      font-weight: bold;
+      @include spacing(map-get($spacing, type, padding), 16px, 16px, 16px, 16px);
+    }
+    &__is-checked {
+      height: auto;
+      width: 0;
+      opacity: 0;
+      transform: translateX(0);
+      @include flex-center;
+      background: map-get($colors, terciary, normal);
+      i {
+        font-size: 1.75rem;
+        color: map-get($colors, neutral, white);
+      }
+    }
+  }
+}
+
+@keyframes checked {
+  0% {
+    transform: translateX(100%);
+    width: 0;
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(0%);
+    width: 70px;
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    transform: translateX(0);
+    width: 0;
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(100%);
+    width: 70px;
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes menu-display {
+  100% {
+    opacity: 1;
   }
 }
