@@ -1,0 +1,45 @@
+
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  background: map-get($colors, neutral, white);
+  z-index: 2;
+  animation: fade 300ms 2000ms ease-in forwards;
+
+  &__logo {
+    path {
+      animation: color 3000ms ease-in-out infinite;
+    }
+  }
+}
+
+
+@keyframes fade {
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes color {
+  0% {
+    fill: map-get($colors, primary, normal);
+  }
+  25% {
+    fill: map-get($colors, primary, light);
+  }
+  50% {
+    fill: map-get($colors, secondary, normal);
+  }
+  70% {
+    fill: map-get($colors, secondary, light);
+  }
+  100% {
+    fill: map-get($colors, primary, dark);
+  }
+}

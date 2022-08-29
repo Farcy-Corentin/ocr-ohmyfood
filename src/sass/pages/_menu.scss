@@ -42,11 +42,17 @@
       border-bottom: 3px solid map-get($colors, terciary, normal);
     }
   }
-  .main-dish, .dish, .desserts {
-
-  }
   .btn {
     @include spacing-margin-auto;
+  }
+  &__card {
+    @for $i from 0 through 5 {
+      $delay: 2500+($i*2*100);
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        animation: menu-display 300ms #{$delay}ms ease-in-out forwards;
+      }
+    }
   }
   &__like {
     display: flex;
@@ -56,3 +62,8 @@
   }
 }
 
+@keyframes menu-display {
+  100% {
+    opacity: 1;
+  }
+}

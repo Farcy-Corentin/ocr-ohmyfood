@@ -1,6 +1,11 @@
 nav {
   @include flex-start;
   height: 100%;
+  i {
+    font-size: 24px;
+    transform: translateY(-3%);
+    color: map-get($colors, neutral, dark)
+  }
 }
 
 .header__logo {
