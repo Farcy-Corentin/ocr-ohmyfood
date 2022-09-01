@@ -4,10 +4,10 @@
   cursor: pointer;
   @include spacing(
                   map-get($spacing, type, padding),
-                  map-get($spacing, values, md),
-                  map-get($spacing, values, lg),
-                  map-get($spacing, values, md),
-                  map-get($spacing, values, lg)
+                  12px,
+                  24px,
+                  12px,
+                  24px
   );
   @include typography($font-family-text,map-get($colors, neutral, white),map-get($sizes,medium,200));
   border: 0;

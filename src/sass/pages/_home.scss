@@ -33,6 +33,11 @@
                   map-get($spacing, values, xl),
                   map-get($spacing, values, 0)
   );
+
+  &__title {
+    font-family: var(--font-family-text);
+    font-weight: bold;
+  }
 }
 
 .restaurant {
