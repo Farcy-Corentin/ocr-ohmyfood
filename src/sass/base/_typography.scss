@@ -5,19 +5,22 @@ body {
 
 h1 {
   @include typography($font-family-title,map-get($colors,neutral,dark),map-get($sizes,large,300) * 1.85);
+  font-weight: bold;
   @include spacing(margin,0, 0,32px, 0);
 }
 
 h2 {
   @include typography($font-family-text,map-get($colors,neutral,dark),map-get($sizes,medium,300)* 1.5);
+  font-weight: bold;
   @include spacing(margin,0, 0,16px, 0);
+}
+
+h3 {
+  @include typography($font-family-text,map-get($colors,neutral,dark),map-get($sizes,medium,300)* 1.125);
+  font-weight: bold;
 }
 
 p {
   @include spacing(margin,0,0,16px,0);
   letter-spacing: 0.5px;
-}
-
-button {
-  @include typography($font-family-text,map-get($colors,neutral,dark),map-get($sizes,medium,300));
 }
