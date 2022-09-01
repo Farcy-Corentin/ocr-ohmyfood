@@ -2,22 +2,13 @@
   position: relative;
   z-index: 1;
   cursor: pointer;
-  @include spacing(
-                  map-get($spacing, type, padding),
-                  12px,
-                  24px,
-                  12px,
-                  24px
-  );
+  padding: 1em 2em;
   @include typography($font-family-text,map-get($colors, neutral, white),map-get($sizes,medium,200));
   border: 0;
   @include border-radius-small;
   color: map-get($colors, neutral, white);
   @include linear-gradient(345deg, (rgba(map-get($colors, primary, normal), 1), rgba(map-get($colors, secondary, normal), 0.8)));
   @include shadow-md;
-  @include mediaquery(map-get($breakpoints,sm), min-width) {
-    @include typography($font-family-text,map-get($colors, neutral, white),map-get($sizes,medium,300));
-  }
   &:hover:not(.btn--new) {
     &::after {
       opacity: 1;

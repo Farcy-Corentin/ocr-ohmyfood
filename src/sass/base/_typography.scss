@@ -10,9 +10,10 @@ h1 {
 }
 
 h2 {
-  @include typography($font-family-text,map-get($colors,neutral,dark),map-get($sizes,medium,300)* 1.5);
+  @include typography($font-family-text,map-get($colors,neutral,dark),map-get($sizes,medium,300)* 1.75);
   font-weight: bold;
   @include spacing(margin,0, 0,16px, 0);
+  line-height: 40px;
 }
 
 h3 {
