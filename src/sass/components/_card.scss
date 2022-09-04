@@ -56,13 +56,18 @@
       }
       p {
         margin-bottom: 0;
+        @include truncate;
+      }
+      h3 {
+        @include truncate;
       }
     }
     &__price {
       display: flex;
       align-items: flex-end;
       font-weight: bold;
-      @include spacing(map-get($spacing, type, padding), 16px, 16px, 16px, 0);
+      @include spacing(map-get($spacing, type, padding), 10px, 16px, 10px, 0);
+      @include typography($font-family-text, map-get($colors, neutral, dark), map-get($sizes, small, 300))
     }
     &__is-checked {
       height: auto;

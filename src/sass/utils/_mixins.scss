@@ -115,3 +115,10 @@
   display: $display;
   position: $position;
 }
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
